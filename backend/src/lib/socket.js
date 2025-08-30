@@ -4,7 +4,10 @@ import { Message } from "../models/message.model.js";
 export const initializeSocket = (server) => {
 	const io = new Server(server, {
 		cors: {
-			origin: process.env.CLIENT_URL?.split(",") || ["http://localhost:3000"],
+			origin: [
+				"http://localhost:3000", // local dev
+				process.env.CLIENT_URL // production
+			],
 			credentials: true,
 		}
 	});
