@@ -5,7 +5,7 @@ export const initializeSocket = (server) => {
 	const io = new Server(server, {
 		cors: {
 			origin: "*",
-			credentials: true,
+			credentials: false,
 		}
 	});
 
