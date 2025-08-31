@@ -26,7 +26,7 @@ const baseURL = `${import.meta.env.VITE_BACKEND_URL}`
 
 const socket = io(baseURL, {
 	autoConnect: false, // only connect if user is authenticated
-	withCredentials: true,
+	withCredentials: false,
 });
 
 export const useChatStore = create<ChatStore>((set, get) => ({
