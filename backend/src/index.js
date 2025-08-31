@@ -27,15 +27,7 @@ const PORT = process.env.PORT;
 const httpServer = createServer(app);
 initializeSocket(httpServer);
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000", //local
-      process.env.CLIENT_URL // production
-    ],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.use(express.json()); // to parse req.body
 app.use(clerkMiddleware()); // this will add auth to req obj => req.auth
